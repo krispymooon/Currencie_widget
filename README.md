@@ -16,7 +16,5 @@ git clone https://github.com/krispymooon/Currencie_widget
 и спуститесь до пункта "**All Supported Currencies**":
 
 https://www.exchangerate-api.com/docs/supported-currencies
-<<<<<<< HEAD
 
-=======
->>>>>>> 482962c1085bc19e9687169f41085811becde9cb
+
