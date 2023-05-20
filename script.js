@@ -1,26 +1,37 @@
 // API для получения курсов валют
 const url = "https://api.exchangerate-api.com/v4/latest/RUB";
 
-// Получаем все элементы с классом 'currency-rate'
-var currencyElements = document.querySelectorAll('.currency-rate');
+// Получаем все элементы с классом 'rate'
+// Получаем все элементы с классом 'rate'
+var rateElements = document.querySelectorAll('.rate');
 
 // Получаем курсы валют из API
 try {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // Обновляем значения курсов валют в HTML
-            currencyElements.forEach(element => {
-                var currency = element.getAttribute('data-currency');
-                var rate = (1 / data.rates[currency]).toFixed(4);
-                var text = element.innerText;
-                var updatedText = text.replace(/to [A-Z]+/, `to ${currency}`);
-                element.innerHTML = currency.valueOf() + ":  " + updatedText.replace(/loading\.\.\./, rate);
+            rateElements.forEach(element => {
+                var currencyFrom = element.querySelector('.currency-from').getAttribute('data-currency');
+                var currencyTo = element.querySelector('.currency-to').getAttribute('data-currency');
+
+                // Рассчитываем курс валюты, учитывая различные комбинации валют
+                var rate;
+                if (currencyFrom === 'RUB') {
+                    rate = data.rates[currencyTo];
+                } else if (currencyTo === 'RUB') {
+                    rate = 1 / data.rates[currencyFrom];
+                } else {
+                    rate = data.rates[currencyTo] / data.rates[currencyFrom];
+                }
+
+                element.innerHTML = `${currencyFrom} to ${currencyTo}: ${rate.toFixed(4)}`;
             });
         })
 } catch (error) {
     console.error('Ошибка при получении курса валют:', error);
-    currencyElements.forEach(element => {
+    rateElements.forEach(element => {
         element.textContent = 'Error';
     });
 }
+
+
