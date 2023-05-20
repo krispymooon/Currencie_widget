@@ -7,3 +7,12 @@ git clone https://github.com/krispymooon/Currencie_widget
 ```
 
 Чтобы запустить проект откройте файл main.html
+![msedge_vfW3ynXHco.png](..%2F..%2F..%2F..%2F..%2FDocuments%2FShareX%2FScreenshots%2F2023-05%2Fmsedge_vfW3ynXHco.png)
+пример работы виджета
+
+Валюту можно поменять в **html** файле, а точнее изменив data-currency="**_Currency Code_**" на код необходимой вам старны 
+
+Чтобы просмотреть весь список поддерживаемых валют перейдите на сайт
+и спуститесь до пункта "**All Supported Currencies**"
+
+https://www.exchangerate-api.com/docs/supported-currencies
