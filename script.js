@@ -2,7 +2,6 @@
 const url = "https://api.exchangerate-api.com/v4/latest/RUB";
 
 // Получаем все элементы с классом 'rate'
-// Получаем все элементы с классом 'rate'
 var rateElements = document.querySelectorAll('.rate');
 
 // Получаем курсы валют из API
@@ -33,5 +32,4 @@ try {
         element.textContent = 'Error';
     });
 }
-
 
