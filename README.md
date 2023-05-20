@@ -7,7 +7,7 @@ git clone https://github.com/krispymooon/Currencie_widget
 ```
 
 Чтобы запустить проект откройте файл main.html
-![msedge_vfW3ynXHco](https://github.com/krispymooon/Currencie_widget/assets/106736834/a9f4c662-a3e0-400d-8848-9f88b99b69c2)
+![msedge_4Ks9Cp3T5i](https://github.com/krispymooon/Currencie_widget/assets/106736834/602ea712-3c78-4513-8a8b-e7f470d4373d)
 пример работы виджета
 
 Валюту можно поменять в **html** файле, а точнее изменив data-currency="**_Currency Code_**" на код необходимой вам старны 
